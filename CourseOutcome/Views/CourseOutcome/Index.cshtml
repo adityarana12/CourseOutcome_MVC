@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Your Page Title</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Subject List</h1>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>S. No.</th>
+                    <th>Subject Code</th>
+                    <th>Subject Title</th>
+                    <th>Semester</th>
+                    <th>Status/Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>MCA-103</td>
+                    <td>Computer Networks</td>
+                    <td>1</td>
+                    <td>
+                        <a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-103" subject_name="Computer Networks" class="btn btn-success btn-sm">Fill Course Exit</a>
+                    </td>
+                </tr>
+				<tr>
+					<td>2</td>
+					<td>MCA-105</td>
+					<td>Operating Systems with Linux</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-105" subject_name="Operating Systems with Linux" id="btn_fce51" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>MCA-107</td>
+					<td>Database Management Systems</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-107" subject_name=Database Management Systems" id="btn_fce52" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>MCA-109</td>
+					<td>Object Oriented Programming and JAVA</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-109" subject_name=Object Oriented Programming and JAVA" id="btn_fce53" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>MCA-161</td>
+					<td>Computer Networks Lab.</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-161" subject_name=Computer Networks Lab." id="btn_fce54" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>MCA-163</td>
+					<td>Operating Systems with Linux Lab.</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-163" id="btn_fce55" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>MCA-165</td>
+					<td>Database Management Systems Lab.</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-165" subject_name=Database Management Systems Lab." id="btn_fce56" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>MCA-167</td>
+					<td>
+						Object Oriented Programming and JAVA
+						Lab.
+					</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-167" subject_name=Object Oriented Programming and JAVA
+						   Lab." id="btn_fce57" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>MCA-169</td>
+					<td>Minor Project I</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-169" subject_name=Minor Project I" id="btn_fce58" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>MCA-101</td>
+					<td>Discrete Structures</td>
+					<td>1</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-101" subject_name=Discrete Structures" id="btn_fce49" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>FSDMCA-168</td>
+					<td>Full Stack Development Lab</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="FSDMCA-168" subject_name=Full Stack Development Lab" id="btn_fce84" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>MCA-102</td>
+					<td>Data and File Structures</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-102" subject_name=Data and File Structures" id="btn_fce75" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>MCA-104</td>
+					<td>Object Oriented Software Engineering</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-104" subject_name=Object Oriented Software Engineering" id="btn_fce76" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>MCA-106</td>
+					<td>Python Programming</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-106" subject_name=Python Programming" id="btn_fce77" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>MCA-114</td>
+					<td>Full Stack Development</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-114" subject_name=Full Stack Development" id="btn_fce78" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>MCA-120</td>
+					<td>Software Testing</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-120" subject_name=Software Testing" id="btn_fce79" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>MCA-128</td>
+					<td>Digital Marketing</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-128" subject_name=Digital Marketing" id="btn_fce80" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>MCA-162</td>
+					<td>Data and File Structures Lab</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-162" subject_name=Data and File Structures Lab" id="btn_fce81" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>MCA-164</td>
+					<td>Object Oriented Software Engineering Lab</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-164" subject_name=Object Oriented Software Engineering Lab" id="btn_fce82" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>MCA-166</td>
+					<td>Python Programming Lab</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-166" subject_name=Python Programming Lab" id="btn_fce83" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>STMCA-168</td>
+					<td>Software Testing Lab</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="STMCA-168" subject_name=Software Testing Lab" id="btn_fce85" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>MCA-170</td>
+					<td>Minor Project II</td>
+					<td>2</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-170" subject_name=Minor Project II" id="btn_fce59" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>MCA-263</td>
+					<td>
+						Artificial      Intelligence      and      Machine
+						Learning Lab.
+					</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-263" subject_name=Artificial Intelligence and Machine
+						   Learning Lab." id="btn_fce68" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>EBMCA-265</td>
+					<td>Lab e-Business Systems</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="EBMCA-265" subject_name=Lab e-Business Systems" id="btn_fce73" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>CCMCA-265</td>
+					<td>Lab Cloud Computing</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="CCMCA-265" subject_name=Lab Cloud Computing" id="btn_fce72" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>MCA-269</td>
+					<td>Minor Project III</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-269" subject_name=Minor Project III" id="btn_fce71" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>27</td>
+					<td>MTMCA-267</td>
+					<td>Lab Multimedia Technologies</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MTMCA-267" subject_name=Lab Multimedia Technologies" id="btn_fce70" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>StatsMCA-265</td>
+					<td>Lab Statistics and Data Analytics</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="StatsMCA-265" subject_name=Lab Statistics and Data Analytics" id="btn_fce69" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>MCA-261</td>
+					<td>Design and Analysis of Algorithms Lab.</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-261" subject_name=Design and Analysis of Algorithms Lab." id="btn_fce67" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>MCA-253</td>
+					<td>Cyber Security and Cyber Laws</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-253" subject_name=Cyber Security and Cyber Laws" id="btn_fce66" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>MCA-233</td>
+					<td>Multimedia Technologies</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-233" subject_name=Multimedia Technologies" id="btn_fce65" class="btn btn-sm btn-success">Fill Course Exit</a>
+					</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>MCA-225</td>
+					<td>e-Business Systems</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-225" subject_name=e-Business Systems" id="btn_fce64" class="btn btn-sm btn-success">Fill Course Exit</a>
+					</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>MCA-223</td>
+					<td>Cloud Computing</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-223" subject_name=Cloud Computing" id="btn_fce63" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>MCA-205</td>
+					<td>Statistics and Data Analytics</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-205" subject_name=Statistics and Data Analytics" id="btn_fce62" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>MCA-203</td>
+					<td>
+						Artificial      Intelligence      and      Machine
+						Learning
+					</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-203" subject_name=Artificial Intelligence and Machine
+						   Learning" id="btn_fce61" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>MCA-201</td>
+					<td>Design and Analysis of Algorithms</td>
+					<td>3</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-201" subject_name=Design and Analysis of Algorithms" id="btn_fce60" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>MCA-202</td>
+					<td>Dissertation (Major Project)</td>
+					<td>4</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="MCA-202" subject_name=Dissertation (Major Project)" id="btn_fce74" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>PO</td>
+					<td>Program Outcome</td>
+					<td>4</td>
+					<td>
+						<a asp-controller="CourseOutcome" asp-action="FetchQuestions" asp-route-subject_id="PO" subject_name=Program Outcome" id="btn_fce86" class="btn btn-sm btn-success">Fill Course Exit</a>
+
+					</td>
+				</tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXnALea7ks5l5F5F4fe++pCKFn" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

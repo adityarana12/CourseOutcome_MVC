@@ -1,0 +1,98 @@
+﻿@model ViewModel
+
+<html lang="en">
+<head>
+    <style>
+        .bvicam {
+            font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        }
+
+        .text {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .frm {
+            margin: 10px;
+        }
+    </style>
+    <title>BVICAM Registration Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Grenze&amp;display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/CourseForm.css">
+</head>
+
+<body>
+    <div class="container text-center">
+        <img src="~/Content/bvicam.png" alt="BVICAM" style="width: 15%; height: auto;" asp-append-version="true">
+
+        <fieldset>
+            <form method="post" asp-controller="CourseOutcome" asp-action="CourseForm">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 30px;" id="table">
+                        <h3>Subject ID: @Model.courseFormView.SubjectId</h3>
+                        <h3>Subject Name: @Model.courseFormView.SubjectName</h3>
+
+                        <!-- Add input field for enrollment number -->
+                        <div class="form-group">
+                            <label for="enrollmentNo">Enrollment Number:</label>
+                            <textarea name="suggestion" id="suggestion" class="form-control">@Model.response.Enrollmentno</textarea>
+                        </div>
+                        <div>
+                            <input type="hidden" name="Sid" value="@Model.courseFormView.SubjectId" />
+                        </div>
+
+                        <table class="table table-stripped table-bordered text-justify">
+                            <tbody>
+                                <tr>
+                                    <th rowspan="2" width="6%">S.No.</th>
+                                    <th rowspan="2" width="50%">Course Outcomes</th>
+                                    <th colspan="5" width="24%">Attainment</th>
+                                </tr>
+                                <tr>
+                                    <th>Good<br> (3)</th>
+                                    <th>Average<br> (2)</th>
+                                    <th>Poor<br> (1)</th>
+                                </tr>
+                                @for (var i = 0; i < Model.courseFormView.Questions.Count; i++)
+                                {
+                                    var responseProperty = $"Response{i + 1}";
+                                    <tr>
+                                        <td>@(i + 1)</td>
+                                        <td>@Model.courseFormView.Questions[i].Qtext</td>
+                                        <td>
+                                            <input type="radio" name="@responseProperty"
+                                                   value="3" required="" @(object.Equals(Model.response.GetType().GetProperty(responseProperty).GetValue(Model.response), 3) ? "checked" : "")> (3)
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="@responseProperty"
+                                                   value="2" @(object.Equals(Model.response.GetType().GetProperty(responseProperty).GetValue(Model.response), 2) ? "checked" : "")> (2)
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="@responseProperty"
+                                                   value="1" @(object.Equals(Model.response.GetType().GetProperty(responseProperty).GetValue(Model.response), 1) ? "checked" : "")> (1)
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                        <strong>Suggestion for improvement in the workshop (If any):</strong>
+                        <input type="hidden" name="type" value="fce">
+                        <textarea name="suggestion" id="suggestion" class="form-control">@Model.response.Suggestion</textarea>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
+</html>

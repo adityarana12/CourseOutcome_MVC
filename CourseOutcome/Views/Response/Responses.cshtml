@@ -1,0 +1,56 @@
+﻿@model CourseOutcome.Models.SubmissionView
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="get" asp-action="Result">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Select Subject and Year</h3>
+
+                        <div class="form-group">
+                            <label for="subject">Select Subject</label>
+                            <select class="form-control" asp-for="SubjectCode" id="subject">
+                                @foreach (var item in Model.Subjects)
+                                {
+                                    <option value="@item.SId">@item.SubjectName</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="year">Select Year</label>
+                            <select class="form-control" asp-for="Year" id="year">
+                                @for (int i = 2012; i < 2040; i++)
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">VIEW</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+</style>

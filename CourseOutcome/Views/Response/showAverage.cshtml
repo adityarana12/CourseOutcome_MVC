@@ -1,0 +1,59 @@
+﻿
+<h2>Average Ratings</h2>
+
+<div style="max-width: 800px; margin: 0 auto;">
+    <canvas id="myBarChart" width="400" height="200"></canvas>
+</div>
+
+<table class="table table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Question</th>   
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kvp in ViewData["AverageRatings"] as Dictionary<string, double>)
+        {
+            <tr>
+                <td>@kvp.Key</td>
+                <td>@kvp.Value.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Get the data from ViewData
+    var averageRatings = @Html.Raw(Json.Serialize(ViewData["AverageRatings"]));
+
+    // Extract labels, data, and ratings from the dictionary
+    var labels = Object.keys(averageRatings);
+    var data = Object.values(averageRatings);
+
+    // Create a new bar chart instance
+    var ctx = document.getElementById('myBarChart').getContext('2d');
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Average Rating',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Set the background color
+                borderColor: 'rgba(75, 192, 192, 1)', // Set the border color
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 3,
+                    min:1,
+                }
+            }
+        }
+    });
+</script>

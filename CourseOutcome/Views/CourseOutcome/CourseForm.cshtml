@@ -1,0 +1,83 @@
+﻿@model CourseFormView
+@{
+    var courseResponse = new Response();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BVICAM Registration Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="~/css/CourseForm.css">
+</head>
+<body>
+    <div class="container text-center">
+        <img src="~/Content/bvicam.png" alt="BVICAM" class="img-fluid" style="max-width: 15%;" asp-append-version="true">
+        <h3 class="mt-4">Subject ID: @Model.SubjectId</h3>
+        <h3>Subject Name: @Model.SubjectName</h3>
+        <form method="post" asp-controller="CourseOutcome" asp-action="CourseForm">
+            <div class="container mt-4">
+                <div class="form-group row">
+                    <label for="enrollmentNo" class="col-sm-3 col-form-label">Enrollment Number:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="enrollmentNo" name="Enrollmentno" class="form-control" required>
+                    </div>
+                </div>
+                <input type="hidden" name="Sid" value="@Model.SubjectId" />
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="6%">S.No.</th>
+                            <th width="50%">Course Outcomes</th>
+                            <th colspan="3">Attainment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Questions.Count; i++)
+                        {
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@Model.Questions[i].Qtext</td>
+                                <td>
+                                    <input type="radio" name="Response@(i+1)"
+                                           id="feedback_@(Model.Questions[i].QId)_3" value="3" required> (3)
+                                </td>
+                                <td>
+                                    <input type="radio" name="Response@(i+1)"
+                                           id="feedback_@(Model.Questions[i].QId)_2" value="2"> (2)
+                                </td>
+                                <td>
+                                    <input type="radio" name="Response@(i+1)"
+                                           id="feedback_@(Model.Questions[i].QId)_1" value="1"> (1)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <label for="suggestion"><strong>Suggestion for improvement in the workshop (If any):</strong></label>
+                    <textarea name="suggestion" id="suggestion" class="form-control"></textarea>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXnALea7ks5l5F5F4fe++pCKFn"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>

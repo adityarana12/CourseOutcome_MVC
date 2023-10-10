@@ -1,0 +1,13 @@
+﻿.suggestion-container {
+    display: flex; /* Use flexbox to control spacing */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.suggestion-input {
+    margin-right: 10px; /* Add margin to the right of the input field */
+    padding: 5px; /* Add padding to the input field for spacing */
+}
+
+.submit-button {
+    padding: 5px 10px; /* Add padding to the button for spacing */
+}

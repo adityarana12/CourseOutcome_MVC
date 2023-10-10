@@ -1,0 +1,39 @@
+﻿@model SubmissionResult
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <td>
+                <a href="@Url.Action("Update", "Response", new { SubjectCode = Model.SId })" class="btn btn-primary">
+                    <i class="bi bi-pencil-square"></i> Update Questions
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("calculateAverage", "Response", new { SubjectCode = Model.SId })" class="btn btn-primary">
+                    <i class="bi bi-graph-up"></i> Show Analytics
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>S. No.</th>
+            <th>Enrollment Number</th>
+            <th>TimeStamp</th>
+            <th>Action</th>
+            <th>Total Entries: @Model.TotalEntries</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.FilledResponses.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@Model.FilledResponses[i].Enrollmentno</td>
+                <td>@Model.FilledResponses[i].SubmissionTimestamp</td>
+                <td>
+                    <a href="@Url.Action("ViewForm", "Response", new { Enrollmentno = Model.FilledResponses[i].Enrollmentno, SubjectCode = Model.FilledResponses[i].SId })" class="btn btn-sm btn-success">
+                        <i class="bi bi-eye"></i> View Submission
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

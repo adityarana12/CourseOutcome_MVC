@@ -1,0 +1,64 @@
+﻿@model CourseFormView
+<html lang="en">
+<head>
+    <title>BVICAM Registration Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/CourseForm.css">
+</head>
+
+<body>
+    <div class="container text-center">
+        <img src="~/Content/bvicam.png" alt="BVICAM" style="width: 15%; height: auto;" asp-append-version="true">
+
+        <fieldset>
+            <form method="post" asp-controller="CourseOutcome" asp-action="CourseForm">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 30px;" id="table">
+                        <h3>Subject ID: @Model.SubjectId</h3>
+                        <h3>Subject Name: @Model.SubjectName</h3>
+
+                        <div>
+                            <input type="hidden" name="Sid" value="@Model.SubjectId" />
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Course Outcomes</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (var i = 0; i < Model.Questions.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@(i + 1)</td>
+                                        <td>@Model.Questions[i].Qtext</td>
+                                        <td>
+                                            <!-- Add the update anchor tag with pencil icon -->
+                                            <a href="@Url.Action("RetrieveQuestion", "Response", new { QuestionId = Model.Questions[i].QId, SubjectCode = Model.SubjectId })" class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i> Edit
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <!-- Include Font Awesome for the pencil icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

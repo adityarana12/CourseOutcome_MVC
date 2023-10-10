@@ -1,0 +1,31 @@
+﻿@model Question
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">New Question</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Form for creating a new question -->
+                    <form method="post" asp-controller="Response" asp-action="EditQuestion">
+                        <input asp-for="QId" type="hidden" />
+                        <input asp-for="SId" type="hidden" />
+
+                        <!-- Question Text -->
+                        <div class="form-group">
+                            <label for="questionText">Question Text</label>
+                            <textarea asp-for="Qtext" class="form-control" rows="4" required></textarea>
+                        </div>
+
+                        <!-- Add some spacing between the textarea and the button -->
+                        <div class="form-group text-center mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
